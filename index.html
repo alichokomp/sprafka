@@ -28,7 +28,7 @@
           >Авторизатсиядан ўтиш учун бу ерга босинг</a
         >
       </div>
-      <h3 class="repo_qr_info">Введите PIN-код для просмотра документа</h3>
+      <h3 class="repo_qr_info" style="color: black;">Введите PIN-код для просмотра документа</h3>
 
       <div class="form-group field-repopinmodel-pin_code required validating">
         <label class="control-label" for="repopinmodel-pin_code">ПИН код</label>
@@ -68,7 +68,7 @@
 
         if (userInput === correctCode) {
           // Открытие PDF-файла в новой вкладке
-          window.open("document.pdf", "_blank");
+          window.open("document.pdf");
         } else {
           alert("Неверный код. Пожалуйста, попробуйте снова.");
         }
