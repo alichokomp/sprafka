@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./i.png " />
+    <title>Единый портал интерактивных государственных услуг</title>
+  </head>
+  <body>
+    <div class="con">
+      <div class="fixed">
+        <div class="fixsedridgh"><img class="img" src="./i.png" alt="" /></div>
+        <div class="fixsedleft">
+          <img
+            class="img2"
+            src="./icons8-menu.svg"
+            alt=""
+            style="cursor: pointer"
+          />
+        </div>
+      </div>
+
+      <div class="text">
+        Ушбу ҳужжатдан фойдаланиш учун сиз авторизатсиядан ўтишингиз ёки, ПИН
+        кодини киритишингиз лозим.
+        <a href="https://repository.gov.uz/uz/auth/login"
+          >Авторизатсиядан ўтиш учун бу ерга босинг</a
+        >
+      </div>
+      <h3 class="repo_qr_info">Введите PIN-код для просмотра документа</h3>
+
+      <div class="form-group field-repopinmodel-pin_code required validating">
+        <label class="control-label" for="repopinmodel-pin_code">ПИН код</label>
+        <input
+          type="text"
+          id="codeInput"
+          class="form-control"
+          name="RepoPinModel[pin_code]"
+          autocomplete="off"
+          aria-required="true"
+          data-plugin-inputmask="inputmask_fea305f5"
+        />
+      </div>
+      <button
+        onclick="openPDF()"
+        type="submit"
+        class="btn btn-primary pull-center"
+      >
+        Очиш
+      </button>
+      <h3 class="repo_qr_info qr_blue">
+        ПИН код хужжатнинг QR коди ёнига жойлаштирилган
+      </h3>
+      <div class="col-md-6 vcenter">
+        <img
+          src="./pin_code_document.jpg"
+          width="166"
+          style="margin: 0 auto; display: block; margin-top: 20px"
+        />
+      </div>
+    </div>
+
+    <script>
+      function openPDF() {
+        const correctCode = "4148";
+        const userInput = document.getElementById("codeInput").value.trim();
+
+        if (userInput === correctCode) {
+          // Открытие PDF-файла в новой вкладке
+          window.open("document.pdf", "_blank");
+        } else {
+          alert("Неверный код. Пожалуйста, попробуйте снова.");
+        }
+      }
+    </script>
+  </body>
+</html>
